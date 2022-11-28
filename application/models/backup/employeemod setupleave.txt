@@ -1,0 +1,70 @@
+    function setupLeave($data){
+        $ins  = 0;
+        $msg  = "";
+        $user = $this->session->userdata("username");
+        $job  = $data['code'] ? true : false;
+		
+		if($data['tnt'] == 'teaching')
+		{
+			$query = $this->db->query("SELECT * FROM code_leave_setup WHERE leavetype='{$data['mh_leavetype']}' AND teachingType ='{$data['tnt']}' AND ('{$data['datesetfrom']}' BETWEEN dfrom AND dto OR '{$data['datesetto']}' BETWEEN dfrom AND dto) ");
+			if($query->num_rows() == 0)
+				 $this->db->query("INSERT INTO code_leave_setup (leavetype,teachingType,credit,dfrom,dto,user) VALUES ('{$data['mh_leavetype']}','{$data['tnt']}','{$data['mh_credits']}','{$data['datesetfrom']}','{$data['datesetto']}','{$user}')");
+			else $msg = "Conflict Schedule of Leave.";
+
+			if(!$msg || $job){
+				$query = $this->db->query("SELECT employeeid FROM employee WHERE isactive=1 AND teachingtype ='{$data['tnt']}'");
+				foreach($query->result() as $row){
+					$eid =  $row->employeeid;
+								$this->db->query("UPDATE code_leave_setup SET dfrom='{$data['datesetfrom']}', dto='{$data['datesetto']}' WHERE id='{$data['lid']}'");
+					$cquery =   $this->db->query("SELECT * FROM employee_leave_credit WHERE employeeid='$eid' AND leavetype='{$data['mh_leavetype']}' AND ('{$data['datesetfrom']}' BETWEEN dfrom AND dto OR '{$data['datesetto']}' BETWEEN dfrom AND dto) ");
+					if($cquery->num_rows() == 0){
+						$this->db->query("INSERT INTO employee_leave_credit (employeeid,leavetype,balance,credit,dfrom,dto,user) VALUES ('{$eid}','{$data['mh_leavetype']}','{$data['mh_credits']}','{$data['mh_credits']}','{$data['datesetfrom']}','{$data['datesetto']}','{$user}')");
+						$ins++;
+					}
+					$msg = " $ins Employee Leave Successfully Distributed!.";      
+				}
+			}
+		}
+		else
+		{
+			$continue = true;
+			foreach($data['empstatus'] as $key => $values)
+			{
+				$query = $this->db->query("SELECT * FROM code_leave_setup WHERE leavetype='{$data['mh_leavetype']}' AND teachingType='{$data['tnt']}' AND employmentStatus='{$values}' AND ('{$data['datesetfrom']}' BETWEEN dfrom AND dto OR '{$data['datesetto']}' BETWEEN dfrom AND dto) ");
+				if($query->num_rows() != 0)
+				{
+					$msg = "Conflict Schedule of Leave.";
+					if($job)$continue = false;
+					break;
+				}
+			}
+			
+			if($continue)
+			{
+				if(!$msg || $job)
+				{
+					$employmentStatus = implode("/",$data['empstatus']);
+					if(!$job)
+					{
+						$this->db->query("INSERT INTO code_leave_setup (leavetype,teachingType,employmentStatus,credit,dfrom,dto,user) VALUES ('{$data['mh_leavetype']}','{$data['tnt']}','{$employmentStatus}','{$data['mh_credits']}','{$data['datesetfrom']}','{$data['datesetto']}','{$user}')");
+					}
+						
+					foreach($data['empstatus'] as $key => $values)
+					{	
+						$query = $this->db->query("SELECT employeeid FROM employee WHERE isactive=1 AND teachingtype ='{$data['tnt']}' AND employmentstat = '{$values}'");
+						foreach($query->result() as $row){
+							$eid =  $row->employeeid;
+										$this->db->query("UPDATE code_leave_setup SET dfrom='{$data['datesetfrom']}', dto='{$data['datesetto']}' WHERE id='{$data['lid']}'");
+							$cquery =   $this->db->query("SELECT * FROM employee_leave_credit WHERE employeeid='$eid' AND leavetype='{$data['mh_leavetype']}' AND ('{$data['datesetfrom']}' BETWEEN dfrom AND dto OR '{$data['datesetto']}' BETWEEN dfrom AND dto) ");
+							if($cquery->num_rows() == 0){
+								$this->db->query("INSERT INTO employee_leave_credit (employeeid,leavetype,balance,credit,dfrom,dto,user) VALUES ('{$eid}','{$data['mh_leavetype']}','{$data['mh_credits']}','{$data['mh_credits']}','{$data['datesetfrom']}','{$data['datesetto']}','{$user}')");
+								$ins++;
+							}
+							$msg = " $ins Employee Leave Successfully Distributed!.";      
+						}
+					}
+				}
+			}
+		}
+        return $msg;
+    }

@@ -1,0 +1,280 @@
+
+body{
+    background-image: url(../img/login.jpg);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    font: 600 18px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+}
+
+.backstretch{
+	left: 0px; 
+	top: 0px; 
+	overflow: hidden; 
+	margin: 0px; 
+	padding: 0px; 
+	height: 100vh; 
+	width: 100vw; 
+	z-index: -999999; 
+	position: fixed;
+}
+
+.img-bg{
+	position: absolute; 
+	margin: 0px; 
+	padding: 0px; 
+	border: medium none; 
+	width: 1920px; 
+	height: 1440px; 
+	max-width: none; 
+	z-index: -999999; 
+	left: 0px; 
+	top: -217px;
+}
+
+.login-lbl{
+	color: #4450c6; 
+	font-weight: bold;
+}
+
+.no-padding-margin{
+	margin: 0px;
+	padding: 0px;
+}
+
+.hr-title{
+	font-weight: bold;
+	font-family: Arial, Helvetica, sans-serif;
+	color: white;
+	font-size: 30px;
+	width: 100%;
+	text-align: center;
+	margin-top : 10vh;
+}
+
+.login-div{
+	margin-top: 2vh;
+	width: 290px;
+    background: #ffffffb8;
+    border-radius: 10px;
+    padding: 15px 27px;
+    color:#003087;
+    min-width: 290px;
+}
+
+.my-container{
+	width: 99%;
+	height: 100%;
+	border: 1px solid transparent;
+}
+
+.login-logo{
+	width: 90px;
+}
+
+.login-header{
+	padding:10px 10px;
+	font-size:18px;
+}
+
+.login-header-description{
+	font-size:12px;
+}
+
+.login-caption{
+	color:#003087 ; 
+	font-weight: bold;
+}
+
+.login-input{
+	border: 1px solid #003087;
+}
+
+.btn-google{
+	width: 48%;
+	padding: 3px;
+	background: #0054C2;
+	color: white;
+}
+
+.login-google-icon{
+	width: 28px;
+	height: 28px;
+}
+
+.google-icon-icon-div{
+	float: left
+}
+
+.google-login-caption{
+	font-size: 11px;
+}
+
+.gate-header{
+	line-height: 55px;
+	font-size: 16px;
+	color: #fff;
+	font-weight: 300;
+	text-align: center;
+	background: #0072C6;
+}
+
+.gate-content-left{
+	margin: 0;
+	padding: 0;
+	float: left;
+	position: relative;
+	top: -5px;
+	width: 30%;
+}
+
+.gate-content-right{
+	margin: 0;
+	padding: 0;
+	position: relative;
+}
+
+.login-gate {
+    width: 70%;
+    top: 25%;
+    left: 13%;
+    margin-left: -175px;
+    margin-left: auto;
+    margin-right: auto;
+    
+}
+
+.img-user{
+	width: 100%;
+	height: 285px;
+}
+
+.rfid{
+	padding: 10px;
+	width: 100%; 
+	height: 60em; 
+	font-size: 60em;
+	text-align: center;
+}
+
+a { 
+    text-decoration:none; 
+    color:#00c6ff;
+}
+
+h1 {
+    font-size: 60px;
+    margin: 0px;
+}
+
+h1 small{
+    font: 0.2em normal  Arial, Helvetica, sans-serif;
+    text-transform:uppercase; letter-spacing: 0.2em; line-height: 5em;
+    display: block;
+}
+
+h2 {
+    font-weight: 700;
+    font-size: 45px;
+    margin-bottom: 0px !important;
+}
+
+h2, p {
+    margin-bottom:10px;
+} 
+
+.clock { 
+    margin:0 auto; 
+    padding:30px;  
+    color:#fff; 
+}
+h4{
+	font-size: 26px;
+    margin-top: 14px;
+}
+
+#Date { 
+    font-size: 71px;
+    text-align: center;
+    color: black; 
+}
+
+ul {
+    /* width: 100%; */
+    margin:0 auto;
+    padding:0px;
+    list-style:none;
+    text-align:center;
+}
+ul.timer li{
+	display: inline;
+    font-size: 3.5em;
+    text-align: center;
+    color: black;
+}
+
+#point { 
+	position:relative; 
+	-moz-animation:mymove 1s ease infinite; 
+	-webkit-animation:mymove 1s ease infinite; 
+	padding-left:10px; 
+	padding-right:10px; 
+}
+
+@-webkit-keyframes mymove 
+{
+    0% {opacity:1.0; text-shadow:0 0 20px #00c6ff;}
+    50% {opacity:0; text-shadow:none; }
+    100% {opacity:1.0; text-shadow:0 0 20px #00c6ff; }  
+}
+ 
+@-moz-keyframes mymove 
+{
+    0% {opacity:1.0; text-shadow:0 0 20px #00c6ff;}
+    50% {opacity:0; text-shadow:none; }
+    100% {opacity:1.0; text-shadow:0 0 20px #00c6ff; }  
+}
+
+.new-login.opacity {
+    background: rgba(255, 255, 255, 0.35);
+}
+
+.tbl-gate-result{
+	border : 1px white solid;
+}
+
+.tbl-gate-result thead tr th{
+	padding: 7px;
+	font-size: 12px;
+	border: 1px #DEDEDE solid;
+}
+
+.tbl-gate-result tbody tr td{
+	padding: 7px;
+	background-color: white;
+	font-size: 12px;
+	border: 1px #DEDEDE solid;
+	color: #777777;
+	text-align: center;
+}
+
+.tbl-gate-result tfoot tr td{
+	padding: 7px;
+	background-color: white;
+	font-size: 12px;
+	border: 1px #DEDEDE solid;
+	color: #777777;
+	text-align: center;
+}
+
+.text-default.error{
+	color : #FF1919A3;
+}
+
+.text-default.success{
+	color : #077B07BD;
+}
+
+

@@ -1,0 +1,480 @@
+
+body {
+ background-color: #fff;
+ margin: 0 10% 0 5px;
+ font-family: 'Source Sans Pro','Helvetica Neue',Helvetica,Arial,sans-serif;
+ font-size: 11px;
+ color: #4F5155;
+}
+select,textarea {
+ font-family: 'Source Sans Pro','Helvetica Neue',Helvetica,Arial,sans-serif;
+ font-size: 11px;   
+}
+a {
+ color: #003399;
+ /*background-color: #343434;*/
+ font-weight: normal;
+}
+h1 {
+ color: #444;
+ background-color: transparent;
+ font-size: 16px;
+ font-weight: bold;
+ margin: 24px 0 2px 0;
+ padding: 5px 0 6px 0;
+}
+code {
+ font-family: tahoma, Sans-serif;
+ font-size: 11px;
+ background-color: #f9f9f9;
+ border: 1px solid #D0D0D0;
+ color: #002166;
+ display: block;
+ margin: 14px 0 14px 0;
+ padding: 12px 10px 12px 10px;
+}
+input,button{
+ font-family: tahoma;   
+}
+.button_general{
+ font-size: 12px;
+ padding: 3px;    
+ text-align: center; 
+}
+.inputdetails_left{
+ font-size: 12px;
+ padding: 3px;    
+ text-align: left; 
+}
+.inputdetails_right{
+ font-size: 12px;
+ padding: 3px;    
+ text-align: right; 
+}
+.inputdetails_center{
+ font-size: 12px;
+ padding: 3px;    
+ text-align: center; 
+}
+.signout{
+   font-size: 10px; 
+   color: #7B68EE;
+}
+.signout:hover{
+   color: #E02727; 
+}
+.menus li{
+display: inline;
+margin: 0;
+
+}
+.menus li a{
+    display: inline;
+    text-decoration: none;
+    padding: 7px 7px;
+    margin: 0px;
+    border: 1px solid #E8E8F5;
+    text-transform: uppercase;
+    color: #000;
+}
+.menus li a:hover{
+    cursor:pointer;
+    background-color: #4F8383;
+    color: #FFF;
+}
+.submenus{
+    padding: 3px; 
+	text-align:left;
+	width: 400px; 
+	background-color:#fff;
+	list-style-type: none; 
+	margin: 5px 0 0 0;
+}
+.submenus li{
+    display: inline;
+    padding: 0 0 0 2px;
+    margin: 0;
+}
+.submenuslia{
+    text-decoration: none;
+    padding: 5px 9px;
+    margin: 0px;
+    border: 1px solid #4F8383;
+    background-color: #4F8383;
+    color: #FFF;
+}
+.submenus li:hover{
+    cursor:pointer;
+}
+.submenuslia:hover{
+    cursor:pointer;
+    background-color: #67b5b5;
+    border: 1px solid #67b5b5;
+    color: #000;
+}
+.menuselected {
+    text-decoration: none;
+    padding: 5px 9px;
+    margin: 0px;
+    border: 1px solid #4F8383;
+    border-bottom: 1px solid #fff;
+    background-color: #fff;
+    color: #4F8383;
+    cursor: default;
+}
+.displayer{
+    border:1px solid #4F8383;
+    background-color:#4F8383;
+    height: 500px;
+    padding: 1px 0 0 0;
+}
+.board{
+    border:1px solid #4F8383;
+    background-color:#FFF;
+    height: 480px;
+}
+.comments{
+    font-style: italic;
+    font-size: 11px;
+}
+.indent{
+    font-style: italic;
+    font-weight: bolder;
+}
+.tableform{
+    background-color: #567;
+}
+.tableform td{
+    background-color: #FFF;
+    padding: 2px 10px 3px 10px;
+}
+.tableform th{
+    background-color: #FFF;
+    text-align: left;
+    padding: 5px;
+}
+.alink{
+    cursor: pointer;
+}
+.calendarday{
+    background-color: #FFB200;
+    color: #000;
+}
+.calendarday_current{
+    background-color: #FFE070;
+    color: #000;
+}
+.calendarday_over{
+    background-color: #FFB300;
+    color: #000;
+}
+.calendarday_current_over{
+    background-color: #FFE370;
+    color: #000;
+}
+.calendarday_select_right{
+    background-color: #FFB200;
+    color: #000;
+    font-size:10px;
+    vertical-align:top;
+    padding: 0 0 0 0;
+    height: 35px;
+    border-bottom: 2px solid #ACA764;
+}
+.calendarday_select_left{
+    background-color: #FFB200;
+    color: #000;
+    font-size:10px;
+    vertical-align:top;
+    padding: 0 0 0 0;
+    height: 35px;
+    border-right: 2px solid #ACA764;
+    border-bottom: 2px solid #ACA764;
+}
+.shadeday{
+    background-image: url('../images/shades.png');
+    position: absolute;
+    z-index: 11;
+    height: 20px;
+    width: 43%;
+}
+.smallreg{
+    font-size: 9px;
+}
+.tableform{
+    background: #67B5B5;
+}
+.caldisplay{
+    font-size: 9px;
+    position: absolute;
+    padding:0 0 0 5px;
+}
+.shades{
+    background-image: url('../images/shades.png');
+    display: none;
+    position: fixed;
+    top: 0%;left: 0%;
+    z-index: 11;
+    height:100%;width: 100%;
+}
+.callshade{
+    background-image: url('../images/shades.png');
+   
+}
+.closebutton{
+    cursor: pointer;
+}
+.inviinput{
+    width:85%;
+    border-color: transparent;
+    text-align: center;
+    text-transform: uppercase;
+}
+.tdtitle{
+    padding: 0 0 0 10px;
+    height: 40px;
+    font-weight: bold;
+}
+.dinput{
+    padding: 3px;
+    font-size: 11px;
+    text-transform: uppercase;
+}
+.dinputsmall{
+    padding: 3px;
+    font-size: 11px;
+}
+.verti{
+    writing-mode:tb-rl;
+	-webkit-transform:rotate(90deg);
+	-moz-transform:rotate(90deg);
+	-o-transform: rotate(90deg);
+    white-space:nowrap;
+	display:block;
+	bottom:0;
+	width:25px;
+	font-family: 'Source Sans Pro','Helvetica Neue',Helvetica,Arial,sans-serif;
+	font-size:20px;
+	font-weight:normal;
+	text-shadow: 0px 0px 1px #333;
+}
+.loginform{
+    position: absolute;
+    top: 20px;
+    left: 30px;
+    border: 1px solid #000;
+    padding: 50px;
+}
+.middisplay{
+    padding: 20px;
+}
+/** this is for the style of main and submenus */
+.menutab{
+    border-spacing: 2px;
+}
+.menutab th{
+    padding: 5px 10px 5px 5px;
+    border: 1px #fff4a8 solid;
+    background: #0072c6;
+    font-family: 'Source Sans Pro','Helvetica Neue',Helvetica,Arial,sans-serif;
+    text-transform: uppercase;
+    color: black;
+}
+.menutab td{
+    padding: 4px 40px 10px 15px;
+    cursor: pointer;
+    font-style: normal;
+    color: #656565;
+    background: linear-gradient(#eff4cd, #e8eab0);
+    font-weight: bold;
+    font-size: 14px;
+}
+.menutab td:hover{
+    background: lightblue;
+    font-style: normal;
+}
+
+/** this is for the style of submenus */
+.submenus td{
+    padding: 5px;
+    border: 1px #eaeaea solid;
+    cursor: pointer;
+    font-style: italic; 
+}
+.submenus td:hover{
+    background: lightblue;
+}
+.submenuselected{
+    background: lightblue;
+}
+
+/** this is for the style of a list with titles */
+.listingtable{
+    width: 100%; 
+}
+.listingtable th{
+    background-color: #B9C9FE;
+    border-top : 5px solid #AABCFE;
+    padding: 10px 5px 10px 10px;
+    cursor: pointer;
+}
+.listingtable td{
+    background-color: #E8EDFF;
+    padding: 5px;
+}
+.listingtable tr:hover td{
+    background-color: #FBD4B6;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.minitab{
+    padding: 2px 0;
+    margin-left: 0;
+    margin-top: 1px;
+    margin-bottom: 0;
+    list-style-type: none;
+    text-align: left;
+}
+.minitab li{
+    font-family: 'Source Sans Pro','Helvetica Neue',Helvetica,Arial,sans-serif;    
+    display: inline;
+    margin: 0;
+}
+.minitab li a{
+    text-decoration: none;
+    padding: 2px 10px 2px 10px;
+    margin-right: 1px;
+    border: 1px solid #778;
+    color: #FFF;
+    background-color: #777788;
+    border-top-left-radius: 7px;
+    border-top-right-radius: 7px;
+}
+
+.minitab li a:hover{
+    text-decoration: none;
+}
+
+.minitab li.selected{
+    position: relative;
+    top: 1px;
+    font: bold tahoma;
+    color: #2d2b2b;
+}
+
+.minitab li.selected a{ /*selected main tab style */
+    background-color: white;
+    border-bottom-color: white;
+    color: #2d2b2b;
+}
+
+.minitab li.selected a:hover{ /*selected main tab style */
+    text-decoration: none;
+}
+
+.minitabcontent{
+    border-top: 1px solid gray;
+    margin-bottom: 1em; padding: 10px;
+    background-color:#ffffff;
+}
+.infotable .required{
+    color : red;
+}
+  .schedulelist{
+     width: 100%;
+  }
+  .schedulelist th{
+     font-family: 'Source Sans Pro','Helvetica Neue',Helvetica,Arial,sans-serif;
+     font-size: 10px;
+     text-transform: uppercase; 
+     padding: 2px;
+     background: #47297F;
+     border-radius: 3px;
+     text-align: center;
+     color: #FFF;
+  }
+  .schedulelist td{
+     font-family: 'Source Sans Pro','Helvetica Neue',Helvetica,Arial,sans-serif;
+     font-size: 12px;
+     padding: 4px;
+     background: #D0E2EE;
+     border-radius: 2px;
+     cursor: pointer;
+  }
+  .schedulelist tr:hover td{
+     background: #5AB8E8;
+  }
+  .schedulelist button{
+     font-family: 'Source Sans Pro','Helvetica Neue',Helvetica,Arial,sans-serif;
+     font-size: 10px;
+     font-weight: bold;
+     text-transform: uppercase;
+     padding: 5px;
+  }
+  .schedulelist select{
+     font-family: 'Source Sans Pro','Helvetica Neue',Helvetica,Arial,sans-serif;
+     font-size: 11px;
+     padding: 5px;
+     border-radius: 3px 3px;
+     background: #F7D2C1;
+     border: 1px #000;
+  }
+/** Fieldset */
+.d_summary{
+  border: 1px solid #EAEAEA;  
+  position: absolute;
+  width: 300px;
+  padding: 5px;
+  border-radius: 4px;
+  margin: 5px;
+}
+.d_summary div{
+  position: relative;  
+}
+.d_summary legend{
+    font-size: 12px;
+    padding: 5px; 
+    font-weight: bold;
+}
+.d_summary div table td{
+  padding: 2px 10px 2px 10px;
+  background-color: #E8EDFF;
+  border-radius: 3px;
+  cursor: pointer;
+}
+.d_summary div table tr:hover td{
+  padding: 2px 10px 2px 10px;
+  background-color: #FBD4B6;
+  border-radius: 3px;
+}
+.d_detailed{
+  border: 1px solid #EAEAEA;
+  position: absolute;
+  left : 330px; 
+  width: 565px; 
+  padding: 5px;
+  border-radius: 4px;
+}
+.d_detailed div{
+  position: relative;  
+}
+.d_detailed legend{
+    font-size: 12px;
+    padding: 5px; 
+    font-weight: bold;
+}
+.d_detailed div table td{
+  padding: 2px 10px 2px 10px;
+  background-color: #E8EDFF;
+  border-radius: 3px;
+  cursor: pointer;
+}
+.d_detailed div table tr:hover td{
+  padding: 2px 10px 2px 10px;
+  background-color: #FBD4B6;
+  border-radius: 3px;
+}
+.button_c{
+    font-size: 12px;
+}  

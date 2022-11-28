@@ -1,0 +1,105 @@
+/**
+* @author justin (with e)
+* @copyright 2018
+*
+*/
+
+body{
+    background-image: url(../img/dtrmainscreen.jpg);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    font-family: avenir;
+}
+
+.no-padding-margin{
+	margin: 0px;
+	padding: 0px;
+}
+
+.hr-title{
+	font-weight: bold;
+	font-family: avenir;
+	color: black;
+	font-size: 30px;
+	width: 100%;
+	text-align: center;
+	margin-top : 10vh;
+}
+@media screen and (max-width : 600px) {
+    .login-div{
+		width: 80% !important;
+		height: auto;
+	    background: #ffffffa8;
+	    border-radius: 10px;
+	    padding: 2%;
+	    color:#333333;
+	}
+}
+
+@media screen and (min-width : 600px) {
+    .login-div{
+	width: 26% !important;
+	height: auto;
+    background: #ffffffa8;
+    border-radius: 10px;
+    padding: 2%;
+    color:#333333;
+    min-width: 400px;
+    float: left;
+    margin-left: 5%;
+}
+}
+
+
+
+
+.my-container{
+	width: 99%;
+	height: 100%;
+	border: 1px solid transparent;
+}
+
+.login-logo{
+	width: 90px;
+}
+
+.login-header{
+	padding:10px -10px;
+	font-size:18px;
+}
+
+.login-header-description{
+	font-size:12px;
+}
+
+.login-caption{
+	color:#003087 ; 
+	font-weight: bold;
+}
+
+.login-input{
+	border: 1px solid #003087;
+}
+
+.btn-google{
+	width: 48%;
+	padding: 3px;
+	background: #0054C2;
+	color: white;
+}
+
+.login-google-icon{
+	width: 28px;
+	height: 28px;
+}
+
+.google-icon-icon-div{
+	float: left
+}
+
+.google-login-caption{
+	font-size: 11px;
+}

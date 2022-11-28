@@ -1,0 +1,79 @@
+.card-3 {
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+  border-radius: 2px 2px 2px 2px;
+      -webkit-box-shadow: 0 1px 4px
+       rgba(0, 0, 0, 0.3), 0 0 40px
+       rgba(0, 0, 0, 0.1) inset;
+      -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;    box-shadow: 0 1px 4px
+       rgba(0, 0, 0, 0.3), 0 0 40px
+       rgba(0, 0, 0, 0.1) inset;
+
+       background-color: white;
+       position: fixed; 
+       top: 40%;
+       margin-top: -200px; 
+       left: 25%; 
+       width: 50%;
+}
+
+.wrap-vacancy{
+    border-right: 2px solid grey;
+    padding: 15px 30px;
+    min-height: 400px;
+}
+
+.vacancy-title{
+    color:black;
+    font-weight: bold;
+    padding-top: 10px; 
+    border-bottom: 1px solid #dcdcdc;
+}
+
+.vacancy-desc{
+    color:#AB47BC;
+    font-weight: bold;
+    padding-top: 10px; 
+}
+
+.label150{
+    min-width: 150px;
+}
+
+.label100{
+    min-width: 100px;
+}
+
+.wrap-desclist{
+     min-height: 200px;
+}
+
+.vacancy-footer{
+    position: relative; 
+    bottom: 10px; 
+    text-align: center;
+}
+
+.vacancy-footer div{
+    border-top: 1px solid #AB47BC;
+    font-style: italic;
+}
+
+.wrap-signup{
+    max-height: 400px; 
+    min-width: 390px;
+}
+
+.login-container {
+  width: 200px;
+  position: fixed;
+  top: 50%;
+  /*left: 50%;*/
+  margin-left: -175px;
+  padding: 15px 30px;
+  background: #fff;
+  margin-top: -200px;
+}
+
+.error{
+    color: red;
+}

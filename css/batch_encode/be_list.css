@@ -1,0 +1,61 @@
+#batch_process, #income-modal{
+    color:blue;
+    text-decoration: underline;
+    font-style: italic;
+    font-weight: bold;
+    font-size: 13px;
+    float: right;
+}
+
+.lechour, .labhour{
+    width: 60px;;
+    text-align: center;
+}
+.leclab-pay{
+    padding-bottom:2px;
+}
+.wrap_leclabpay{
+    min-width: 460px;
+    width: 100%;
+}
+.aimsdept{
+    width: 200px;
+}
+.salary-input{
+    width: 80px;
+    text-align: right;
+    height: 40px !important;
+    font-size: 16px !important;
+    display: block;
+}
+.status-tag{
+    color: green;
+    font-weight: bold;
+    min-width: 70px;
+}
+#savesalary{
+    letter-spacing: 3px;
+}
+.lechour,.labhour{
+    height: 35px !important;
+    font-size: 14px !important;
+}
+.schedule{
+    width: 120px;
+}
+.tax_status{
+    width: 190px;
+}
+
+#loading{
+  display:none;
+}
+
+.emplist{
+  overflow-x: auto;
+}
+
+#save_load{
+    display: none;
+    margin-left: 40px;
+}

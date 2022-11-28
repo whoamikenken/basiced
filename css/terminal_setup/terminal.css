@@ -1,0 +1,50 @@
+    .onoffswitch {
+        position: relative; width: 81px;
+        -webkit-user-select:none; -moz-user-select:none; -ms-user-select: none;
+    }
+    .onoffswitch-checkbox {
+        display: none;
+    }
+    .onoffswitch-label {
+        display: block; overflow: hidden; cursor: pointer;
+         border-radius: 7px;
+    }
+    .onoffswitch-inner {
+        display: block; width: 200%; margin-left: -100%;
+        transition: margin 0.3s ease-in 0s;
+    }
+    .onoffswitch-inner:before, .onoffswitch-inner:after {
+        display: block; float: left; width: 50%; height: 18px; padding: 0; line-height: 18px;
+        font-size: 12px; color: white; font-family: Trebuchet, Arial, sans-serif; font-weight: bold;
+        box-sizing: border-box;
+    }
+    .onoffswitch-inner:before {
+        content: "Active";
+        padding-right:  10px;
+        background-color: #19CF19; color: #FFFFFF;
+    }
+    .onoffswitch-inner:after {
+        content: "Inactive";
+        padding-right: 10px;
+        background-color: #EEEEEE; color: #999999;
+        text-align: right;
+    }
+    .onoffswitch-switch {
+        display: block; width: 12px; margin: 3px;
+        background: #FFFFFF;
+        position: absolute; top: 0; bottom: 0;
+        right: 59px;
+        border: 1px solid #BDBDBD;
+        border-radius: 7px;
+        transition: all 0.3s ease-in 0s; 
+    }
+    .onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-inner {
+        margin-left: 0;
+    }
+    .onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch {
+        right: 0px; 
+    }
+
+    #addnewterminal{
+        cursor: pointer;
+    }

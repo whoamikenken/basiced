@@ -1,0 +1,61 @@
+public function dbuserlist()
+{   
+     $this->load->library('datatables');
+    $this->datatables
+      ->select('userid,userno,fn_fullname_get(userid) ,fn_usertype_get(usertype),fn_useraccess_get(userid),gender,usertype')
+      ->edit_column('userid', '<input type="checkbox" value="$1" usertype="$2">', 'userid,usertype')
+      ->from('tbluser_information');
+      #->edit_column('userid', '<a href="profiles/edit/$1">$2</a>', 'userno, userid');
+    $results = $this->datatables->generate('json');
+    echo $results;
+}
+
+
+
+$('.useraccount').dataTable({
+    "sPaginationType": "full_numbers",
+    "bProcessing": true,
+    "bServerSide": true,
+    "sAjaxSource": "<?=site_url("admin/dbuserlist")?>",
+    "sDom": "<'row-fluid inboxHeader'<'span6'<'dt_actions'>l><'span6'f>r>t<'row-fluid inboxFooter'<'span6'i><'span6'p>>",
+    "iDisplayLength": 25,
+    "asSorting": [[ 2, "asc" ]],
+    "aoColumns": [
+		{ "bSortable": false },
+		{ "sType": "string" },
+		{ "sType": "string" },
+		{ "bSortable": true },
+      { "bSortable": true },
+      { "bSortable": true }
+	],
+   "sServerMethod": "POST",
+   "fnRowCallback": function( nRow, aData, iDisplayIndex ) {
+                                 $(nRow).addClass('new');
+                                 $(nRow).find("td:eq(0)").addClass('checkboxes');
+                                 $(nRow).find("input:checkbox").uniform();
+                                 $(nRow).find("td:eq(1),td:eq(2),td:eq(3),td:eq(4),td:eq(5)").click(function(){
+                                       var form_data = {
+                                          userid:$(this).parents('tr').find("input:checkbox").val(),
+                                          usertype:$(this).parents('tr').find("input:checkbox").attr("usertype"),
+                                          fullname:$(this).parents('tr').find("td:eq(2)").text(),
+                                          userno:$(this).parents('tr').find("td:eq(1)").text()
+                                       };
+                                       $("#inbox").html(loadergif);
+                                       $.ajax({
+                                          url: "<?=site_url("admin/useraccess")?>",
+                                          type: "POST",
+                                          data: form_data,
+                                          success: function(msg){ 
+                                          $(".inbox").html(msg);
+                                          } 
+                                       });
+                                });
+                               }
+});
+
+
+$('.inbox #inbox .dt_actions').html($('.dt_inbox_actions').html());
+$('.dataTables_length select').chosen();
+
+/*========= uniform plugin =========*/
+$('input[type="checkbox"]').uniform();

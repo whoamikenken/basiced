@@ -1,0 +1,1 @@
+<legend>Recomputing: <?= isset($records[0]['emp_count']) ? $records[0]['emp_count'] : 0 ?> of <?= isset($records[0]['emp_total']) ? $records[0]['emp_total'] : 0 ?> employee ...</legend>
